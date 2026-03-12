@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, currentCity }) => {
   const [city, setCity] = useState('');
 
   const handleSubmit = (e) => {
@@ -20,7 +20,7 @@ const SearchBar = ({ onSearch }) => {
         type="text"
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        placeholder="Durban"
+        placeholder={currentCity || 'Durban'}
         required
       />
     </form>

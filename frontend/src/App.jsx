@@ -66,7 +66,7 @@ function App() {
         />
       )}
       <div className="container">
-        <SearchBar onSearch={setCity} />
+        <SearchBar onSearch={setCity} currentCity={city} />
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
         {weatherData && (
