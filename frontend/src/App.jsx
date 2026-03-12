@@ -1,3 +1,5 @@
+//Coding with MJ. 2025. Build a Weather App with React in 2025 (Perfect for Beginners) [Video online]. Available at: < https://www.youtube.com/watch?v=iTvNpQjsoQg >[Accessed 10/03/2026]
+
 import { useEffect, useState } from 'react';
 import './App.css';
 import { getWeatherData } from './api';
@@ -5,6 +7,7 @@ import CurrentWeather from './components/CurrentWeather';
 import HourlyForecast from './components/HourlyForecast';
 import WeeklyForecast from './components/WeeklyForecast';
 import SearchBar from './components/SearchBar';
+import WeatherEffects from './components/WeatherEffects';
 import { parse } from 'date-fns';
 
 const getGradientClass = (hour) => {
@@ -56,6 +59,12 @@ function App() {
 
   return (
     <div className={`app ${gradientClass}`}>
+      {weatherData && (
+        <WeatherEffects 
+        conditionText={weatherData.current.condition.text}
+        hour={hour} 
+        />
+      )}
       <div className="container">
         <SearchBar onSearch={setCity} />
         {loading && <p>Loading...</p>}

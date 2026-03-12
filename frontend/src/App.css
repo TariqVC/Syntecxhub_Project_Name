@@ -33,3 +33,44 @@
 
   padding: 2.5rem;
 }
+
+/* Hover animations on cards */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar styling for hourly forecast */
+.hourly-container::-webkit-scrollbar {
+  height: 6px;
+}
+.hourly-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.hourly-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.hourly-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Smooth fade-in on load */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.container > * {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Glowing border effect on search bar focus */
+form:focus-within {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
